@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Bistrot</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    p {
+      line-height: 1.5;
+    }
+    .button {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .restaurant-image {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .feature {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .feature-icon {
+      flex: 0 0 50px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+    }
+    .feature-text {
+      flex: 1;
+      padding-left: 10px;
+    }
+    .welcome {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.menu-item {
+  text-align: center;
+  margin: 20px;
+}
+.features {
+  list-style-type: none;
+}
+.feature {
+  display: flex;
+  margin-bottom: 20px;
+}
+.feature-icon {
+  flex: 0 0 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+.feature-text {
+  flex: 1;
+  padding-left: 10px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+  }
+  footer ul {
+    list-style-type: none;
+  }
+  .left-column,
+.right-column {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+  </style>
+</head>
+<body>
+<header>
+    <h1>Le Bistrot</h1>
+</header>
+<div class="container">
+    <div class="welcome">
+        <h2>Bienvenue au Restaurant Bistrot !</h2>
+        <p>Nous vous invitons à venir découvrir notre ambiance chaleureuse et conviviale, ainsi que notre service attentionné et professionnel. Que vous soyez à la recherche d'une soirée romantique, d'un dîner en famille ou d'un déjeuner d'affaires, notre restaurant est l'endroit idéal pour toutes les occasions.</p>
+        <img src="../static/images/resto1.png" width="200" th:src="@{/images/resto1.png}" alt="Image du Bistrot">
+    </div>
+
+    <h3>Menu</h3>
+    <div class="menu-items">
+        <div class="menu-item">
+            <img src="../static/images/pizza.png" width="200" height="240" th:src="@{/images/pizza.png}" alt="Pizza">
+            <p>Pizza</p>
+        </div>
+        <div class="menu-item">
+            <img src="../static/images/fettuccine-alfredo.png" width="200" height="240" th:src="@{/images/fettuccine-alfredo.png}" alt="Pates">
+            <p>Pâtes</p>
+        </div>
+        <div class="menu-item">
+            <img src="../static/images/burrata-salad.png" width="200" height="240" th:src="@{/images/burrata-salad.png}" alt="Salade">
+            <p>Salades</p>
+        </div>
+        <div class="menu-item">
+            <img src="../static/images/traditional-italian-tiramisu.png" width="200" height="240" th:src="@{/images/traditional-italian-tiramisu.png}" alt="Desserts">
+            <p>Desserts</p>
+        </div>
+    </div>
+        <div class="left-column">
+            <h3>Caractéristiques</h3>
+            <div class="feature">
+                <div class="feature-icon">1</div>
+                <div class="feature-text">Plats frais préparés avec des ingrédients locaux</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">2</div>
+                <div class="feature-text">Ambiance chaleureuse et conviviale</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">3</div>
+                <div class="feature-text">Service attentionné et professionnel</div>
+            </div>
+        </div>
+        <div class="right-column">
+            <h3>Nos spécialités</h3>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">1</div>
+                    <div class="feature-text">Pizzas artisanales cuites au feu de bois</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">2</div>
+                    <div class="feature-text">Pâtes fraîches faites maison</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">3</div>
+                    <div class="feature-text">Salades gourmandes et fraîches</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">4</div>
+                    <div class="feature-text">Desserts maison délicieux</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>Pour réserver une table, veuillez nous contacter :</p>
+    <ul>
+        <li>Email : bistrot@gmail.com</li>
+        <li>Téléphone : 123-456-7890</li>
+    </ul>
+</footer>
+</body>
+</html>

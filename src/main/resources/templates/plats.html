@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Le Bistrot</title>
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        td {
+            border-bottom: 1px solid #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #ff0000;
+        }
+
+        img {
+            width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(plats)}">
+        <h2>Plat List</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Plat Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="plat : ${plats}">
+                <td><a th:href="@{/plat/{id}(id=${plat.id})}" th:text="${plat.id}">Id</a></td>
+                <td th:text="${plat.platId}">Plat Id</td>
+                <td th:text="${plat.name}">Description</td>
+                <td th:text="${plat.price}">Price</td>
+                <td><a th:href="@{/plat/{id}(id=${plat.id})}">View</a></td>
+                <td><a th:href="@{/plat/edit/{id}(id=${plat.id})}">Edit</a></td>
+                <td><a th:href="@{/plat/delete/{id}(id=${plat.id})}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row text-center">
+        <img src="../static/images/plat.png" width="200" th:src="@{/images/plat.png}"/>
+    </div>
+</div>
+</body>
+</html>
