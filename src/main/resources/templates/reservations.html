@@ -87,15 +87,33 @@
 
 		a {
 			text-decoration: none;
-			color: #333;
+
 		}
 
 		a:hover {
 			color: #ff0000;
 		}
+		  .my-divs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.my-div {
+  text-align: center;
+  margin: 20px;
+}
+header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 	</style>
 </head>
 <body>
+<header>
+  <li th:replace="fragments/header :: header"></li>
+</header>
 <div class="parent-container">
   <div class="left-column">
     <img src="../static/images/image1.png" th:src="@{/images/image1.png}">

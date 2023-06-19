@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/master-page}">
+<head lang="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+  <link href="../../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<th:block layout:fragment="content">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 jumbotron" style="width: 1650px; height: 796px; padding-left: 400px; padding-right: 400px;">
+      <h2 style="text-align: center">Login Form</h2>
+
+      <form  th:object="${user}" th:action="@{/registration}" method="post">
+        <div class="form-group">
+          <label for="txtName">Name</label>
+          <input id="txtName" name="name" type="text" class="form-control"th:field="*{name}" autofocus="autofocus" required/>
+        </div>
+        <div class="form-group">
+          <label for="txtEmail">Email</label>
+
+          <input id="txtEmail" name="email" type="text" class="form-control"th:field="*{email}" autofocus="autofocus" required/>
+        </div>
+        <div class="form-group">
+          <label for="txtPassword">Password</label>
+          <input id="txtPassword" name="password" type="password"th:field="*{password}" class="form-control" required/>
+        </div>
+        <div style="float:right;">
+          <button id="btnSubmit" type="submit" class="btn btn-outline-success">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</th:block>
+</body>
+</html>

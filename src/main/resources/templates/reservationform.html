@@ -59,12 +59,31 @@
         .btn:hover {
             background-color: #45a049;
         }
+          .my-divs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.my-div {
+  text-align: center;
+  margin: 20px;
+}
+header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
     </style>
 </head>
 <body>
+<header>
+    <li th:replace="fragments/header :: header"></li>
+</header>
 <div class="container">
     <h2>Reservation Details</h2>
     <form class="form-horizontal" th:object="${reservation}" th:action="@{/reservation}" method="post">
+        <input type="hidden" th:field="*{id}"/>
         <div class="form-group">
             <label class="control-label" for="name">Name:</label>
             <input type="text" class="form-control" id="name" th:field="*{name}" required/>

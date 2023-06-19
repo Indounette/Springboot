@@ -25,12 +25,29 @@
         .form-horizontal .btn {
             margin-top: 20px;
         }
+          .my-divs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.my-div {
+  text-align: center;
+  margin: 20px;
+}
+header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
     </style>
 </head>
 <body>
+<header>
+    <li th:replace="fragments/header :: header"></li>
+</header>
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-
     <h2>Plat Details</h2>
     <div>
         <form class="form-horizontal" th:object="${plat}" th:action="@{/plat}" method="post">
